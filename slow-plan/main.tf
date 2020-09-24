@@ -1,3 +1,4 @@
 data "external" "slow-data-source" {
-  program = ["/bin/sh", "-c", "sleep 600 && echo {}"]
+  count = 10000
+  program = ["/bin/sh", "-c", "sleep 30 && echo {}"]
 }
